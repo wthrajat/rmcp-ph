@@ -1,0 +1,27 @@
+[package]
+name = "rmcp-posthog"
+version = "0.1.0"
+edition = "2024"
+description = "PostHog MCP analytics for rmcp servers (experimental, unofficial)"
+license = "Apache-2.0"
+readme = "README.md"
+keywords = ["mcp", "posthog", "analytics", "rmcp"]
+categories = ["development-tools"]
+
+[dependencies]
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
+fancy-regex = "0.19"
+posthog-rs = "0.27.1"
+regex = "1.11"
+rmcp = { version = "3.7.0", default-features = false, features = ["server"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1.0.154", features = ["preserve_order"] }
+tracing = "0.1"
+url = "2.5"
+uuid = { version = "1.13", features = ["v7"] }
+
+[dev-dependencies]
+reqwest = { version = "0.13", default-features = false, features = ["json", "query", "rustls"] }
+rmcp = { version = "3.7.0", features = ["server", "client", "macros", "transport-io"] }
+serde_json = "1"
+tokio = { version = "1.54.1", features = ["full"] }
